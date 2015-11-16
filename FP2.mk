@@ -170,7 +170,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.version.number=1 \
                               fairphone.ota.version.name=Onion \
                               fairphone.ota.beta=0 \
-                              fairphone.ota.image_type=FP2
+                              fairphone.ota.image_type=FAIRPHONE
 
 PRODUCT_MODEL := FP2
 
