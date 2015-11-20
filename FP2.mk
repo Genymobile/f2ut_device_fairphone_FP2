@@ -161,6 +161,7 @@ PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/medi
 
 # Set default ringtone to Fairphone's
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
+PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
 
 PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.device=$(PRODUCT_DEVICE) \
