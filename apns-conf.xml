@@ -3017,12 +3017,13 @@
   />
 
 
-  <apn carrier="T-Mobile Internet"
+  <apn carrier="Telekom Internet"
       mcc="262"
       mnc="01"
-      apn="internet.t-mobile"
-      user="t-mobile"
-      password="tm"
+      apn="internet.telekom"
+      user="telekom"
+      password="telekom"
+      authtype="1"
       mmsc="http://mms.t-mobile.de/servlets/mms"
       mmsproxy="172.28.23.131"
       mmsport="8008"
