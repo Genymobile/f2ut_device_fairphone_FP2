@@ -37,6 +37,7 @@ on init
     # session is not exercised through RemoteDisplay in the android framework
     setprop persist.sys.wfd.virtual 0
     setprop ro.sf.lcd_density 440
+    setprop qemu.sf.lcd_density 440
 
 on fs
     mount_all fstab.qcom
