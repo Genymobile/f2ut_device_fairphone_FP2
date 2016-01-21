@@ -192,3 +192,9 @@ SKIP_BOOT_JARS_CHECK := true
 endif
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay
+
+# SuperUser
+FP2_USE_APPOPS_SU := true
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=0
+
