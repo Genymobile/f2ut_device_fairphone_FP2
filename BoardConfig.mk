@@ -112,3 +112,13 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_LDPRELOAD := libNimsWrap.so
 
 USE_OPENGL_RENDERER := true
+
+
+TW_THEME := portrait_hdpi
+TW_NO_USB_STORAGE := false
+TW_TARGET_USES_QCOM_BSP := true
+TW_NO_EXFAT := true
+TW_NO_EXFAT_FUSE := true
+
+
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
