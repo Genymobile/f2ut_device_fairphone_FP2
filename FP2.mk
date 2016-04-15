@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += iFixit
 
 # Amaze File Manager
-PRODUCT_PACKAGES += Amaze 
+PRODUCT_PACKAGES += Amaze
 
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
@@ -164,16 +164,6 @@ PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Sunbeam.mp3:system/media/audi
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
 
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/twrp.fstab:recovery/root/etc/twrp.fstab
-
-PRODUCT_PROPERTY_OVERRIDES += \
-                              fairphone.ota.device=$(PRODUCT_DEVICE) \
-                              fairphone.ota.time=`date` \
-                              fairphone.ota.android_version=$(PLATFORM_VERSION) \
-                              fairphone.ota.build_number=1.0 \
-                              fairphone.ota.version.number=1 \
-                              fairphone.ota.version.name=Onion \
-                              fairphone.ota.beta=0 \
-                              fairphone.ota.image_type=FAIRPHONE
 
 PRODUCT_MODEL := FP2
 
