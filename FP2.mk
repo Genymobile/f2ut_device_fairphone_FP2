@@ -200,3 +200,5 @@ FP2_USE_APPOPS_SU := true
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
+# we don't have the calibration data so don't generate persist.img
+FP2_SKIP_PERSIST_IMG := true
