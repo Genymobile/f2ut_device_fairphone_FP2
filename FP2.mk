@@ -80,6 +80,8 @@ PRODUCT_PACKAGES += \
         libantradio \
         ANTRadioService \
         antradio_app
+TARGET_RELEASETOOLS_EXTENSIONS := device/fairphone_devices/FP2
+ADD_RADIO_FILES := true
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
