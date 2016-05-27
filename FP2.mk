@@ -149,6 +149,7 @@ PRODUCT_PACKAGES += \
                     MyContactsWidget \
                     ClockWidget \
                     FairphonePrivacyImpact \
+                    FairphoneSetupWizard \
                     ProgrammableButton
 
 PRODUCT_PACKAGES += iFixit
