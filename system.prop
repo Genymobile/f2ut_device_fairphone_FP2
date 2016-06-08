@@ -29,7 +29,7 @@ dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 
-ro.hdmi.enable=true
+ro.hdmi.enable=false
 persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
 #
