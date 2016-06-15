@@ -81,6 +81,8 @@ on boot
     chown system drmrpc /sys/devices/f9924000.i2c/i2c-2/2-004a/secure_touch
     chmod 0775 /persist
     chmod 0444 /persist/board_date.bin
+    chown system root /persist/sns.reg
+    chmod 770  /persist/sns.reg
 
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
