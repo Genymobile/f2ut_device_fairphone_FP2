@@ -38,8 +38,7 @@ PRODUCT_COPY_FILES += \
 
 # Display logo image file
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img \
-    vendor/hip/factory_tools/Senread/senread:$(PRODUCT_OUT)/system/bin/senread 
+    device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
