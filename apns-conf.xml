@@ -6040,14 +6040,10 @@
       type="mms"
   />
 
-  <apn carrier="LUXGSM WAP"
+  <apn carrier="POST Internet"
       mcc="270"
       mnc="01"
-      apn="wap.pt.lu"
-      user="wap"
-      password="wap"
-      proxy="194.154.192.98"
-      port="8080"
+      apn="web.pt.lu"
       type="default,supl"
   />
 
