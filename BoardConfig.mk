@@ -8,6 +8,7 @@ TARGET_ARCH := arm
 endif
 TARGET_KERNEL_ARCH := arm
 BOARD_USES_GENERIC_AUDIO := true
+BOARD_USES_QCOM_HARDWARE := true
 USE_CAMERA_STUB := false
 
 TARGET_USES_AOSP := false
@@ -15,14 +16,14 @@ TARGET_USES_AOSP := false
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
 
--include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
+-include vendor/qcom/proprietary/common/msm8974/BoardConfigVendor.mk
 
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
 TARGET_USES_OVERLAY := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
@@ -71,6 +72,9 @@ else
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 endif
 BOARD_KERNEL_SEPARATED_DT := true
+
+BOARD_CUSTOM_BOOTIMG_MK := device/fairphone_devices/FP2/mkbootimg.mk
+
 
 BOARD_EGL_CFG := device/fairphone_devices/FP2/egl.cfg
 

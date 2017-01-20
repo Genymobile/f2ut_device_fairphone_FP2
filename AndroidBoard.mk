@@ -3,19 +3,19 @@ LOCAL_PATH := $(call my-dir)
 #----------------------------------------------------------------------
 # Compile (L)ittle (K)ernel bootloader and the nandwrite utility
 #----------------------------------------------------------------------
-ifneq ($(strip $(TARGET_NO_BOOTLOADER)),true)
-
-TARGET_BOOTLOADER_PLATFORM_OVERRIDE := $(TARGET_PRODUCT)
-
-# Compile
-include bootable/bootloader/lk/AndroidBoot.mk
-
-$(INSTALLED_BOOTLOADER_MODULE): $(TARGET_EMMC_BOOTLOADER) | $(ACP)
-	$(transform-prebuilt-to-target)
-$(BUILT_TARGET_FILES_PACKAGE): $(INSTALLED_BOOTLOADER_MODULE)
-
-droidcore: $(INSTALLED_BOOTLOADER_MODULE)
-endif
+#ifneq ($(strip $(TARGET_NO_BOOTLOADER)),true)
+#
+#TARGET_BOOTLOADER_PLATFORM_OVERRIDE := $(TARGET_PRODUCT)
+#
+## Compile
+#include bootable/bootloader/lk/AndroidBoot.mk
+#
+#$(INSTALLED_BOOTLOADER_MODULE): $(TARGET_EMMC_BOOTLOADER) | $(ACP)
+#	$(transform-prebuilt-to-target)
+#$(BUILT_TARGET_FILES_PACKAGE): $(INSTALLED_BOOTLOADER_MODULE)
+#
+#droidcore: $(INSTALLED_BOOTLOADER_MODULE)
+#endif
 
 #----------------------------------------------------------------------
 # Compile Linux Kernel
