@@ -144,22 +144,6 @@ PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-PRODUCT_PACKAGES += \
-                    FairphoneUpdater \
-                    FairphoneLauncher3 \
-                    AppOps \
-                    MyContactsWidget \
-                    ClockWidget \
-                    FairphonePrivacyImpact \
-                    FairphoneSetupWizard \
-                    ProgrammableButton \
-                    ProximitySensorTools \
-		    Checkup
-
-PRODUCT_PACKAGES += iFixit
-
-# Amaze File Manager
-PRODUCT_PACKAGES += Amaze
 
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip

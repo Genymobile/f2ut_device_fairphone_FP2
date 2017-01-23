@@ -16,6 +16,10 @@ TARGET_USES_AOSP := false
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
 
+# qcom hardware
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_HAS_QCOM_WLAN := true
+
 -include vendor/qcom/proprietary/common/msm8974/BoardConfigVendor.mk
 
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
@@ -60,7 +64,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Use signed boot and recovery image
-TARGET_BOOTIMG_SIGNED := true
+TARGET_BOOTIMG_SIGNED := false
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -115,7 +119,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
 TARGET_LDPRELOAD := libNimsWrap.so
 
