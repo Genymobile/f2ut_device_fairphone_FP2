@@ -74,7 +74,8 @@ endif
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_CUSTOM_BOOTIMG_MK := device/fairphone_devices/FP2/mkbootimg.mk
-
+TARGET_KERNEL_SOURCE := kernel/fairphone/FP2
+TARGET_KERNEL_CONFIG := fairphone_defconfig
 
 BOARD_EGL_CFG := device/fairphone_devices/FP2/egl.cfg
 
