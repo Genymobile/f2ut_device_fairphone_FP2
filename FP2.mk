@@ -172,6 +172,15 @@ PRODUCT_COPY_FILES += device/fairphone_devices/FP2/twrp.fstab:recovery/root/etc/
 
 PRODUCT_MODEL := FP2
 
+# Ubuntu Overlay Files
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/FP2/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \
+    device/fairphone_devices/FP2/ubuntu/bluetooth-touch-FP2.conf:system/ubuntu/etc/init/bluetooth-touch-FP2.conf \
+    device/fairphone_devices/FP2/ubuntu/FP2.conf:system/ubuntu/etc/ubuntu-touch-session.d/FP2.conf \
+    device/fairphone_devices/FP2/ubuntu/set-brightness-fp2.conf:system/ubuntu/etc/set-brightness-fp2.conf \
+    device/fairphone_devices/FP2/ubuntu/ubuntu-location-service.conf:system/ubuntu/etc/ubuntu-location-service.conf \
+    device/fairphone_devices/FP2/ubuntu/70-FP2.rules:system/ubuntu/usr/lib/lxc-android-config/70-FP2.rules
+
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
 
