@@ -28,6 +28,11 @@ PRODUCT_MANUFACTURER := Fairphone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-fairphone
 
+TARGET_VENDOR := Fairphone
+TARGET_VENDOR_PRODUCT_NAME := FP2
+TARGET_VENDOR_DEVICE_NAME := FP2
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=FP2 PRODUCT_NAME=FP2
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/audio_policy.conf:system/etc/audio_policy.conf \
@@ -40,6 +45,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.wifi.supported=1
 
 PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio_policy.msm8974 \
+    audio.primary.msm8974 \
+    audio.r_submix.default \
+    audio.usb.default \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle
@@ -62,6 +73,10 @@ PRODUCT_PACKAGES += \
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8974
+
 #wlan driver
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
@@ -75,10 +90,11 @@ PRODUCT_PACKAGES += wcnss_service
 
 #ANT stack
 PRODUCT_PACKAGES += \
-        AntHalService \
-        libantradio \
-        ANTRadioService \
-        antradio_app
+    AntHalService \
+    libantradio \
+    ANTRadioService \
+    antradio_app
+
 TARGET_RELEASETOOLS_EXTENSIONS := device/fairphone_devices/FP2
 ADD_RADIO_FILES := true
 

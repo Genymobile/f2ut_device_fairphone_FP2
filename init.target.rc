@@ -27,9 +27,6 @@
 #
 #
 
-# Superuser
-import /init.superuser.rc
-
 on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -69,7 +66,6 @@ on post-fs-data
     mkdir /data/usf 0700 system system
 
 on boot
-    insmod /system/lib/modules/adsprpc.ko
 # access permission for secure touch
     chmod 0660 /sys/devices/f9923000.i2c/i2c-1/1-004a/secure_touch_enable
     chmod 0440 /sys/devices/f9923000.i2c/i2c-1/1-004a/secure_touch
@@ -138,11 +134,6 @@ service qseecomd /system/bin/qseecomd
 service mpdecision /system/bin/mpdecision --avg_comp
    class main
    user root
-   disabled
-
-service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
-   user system
-   group system
    disabled
 
 service thermal-engine /system/bin/thermal-engine

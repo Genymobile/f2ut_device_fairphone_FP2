@@ -8,7 +8,6 @@ TARGET_ARCH := arm
 endif
 TARGET_KERNEL_ARCH := arm
 BOARD_USES_GENERIC_AUDIO := true
-BOARD_USES_QCOM_HARDWARE := true
 USE_CAMERA_STUB := false
 
 TARGET_USES_AOSP := false
@@ -100,6 +99,9 @@ ADD_RADIO_FILES ?= true
 PROTOBUF_SUPPORTED := true
 
 TARGET_HW_DISK_ENCRYPTION := false
+
+# Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # Workaround framework bluetooth dependency
 BOARD_HAVE_BLUETOOTH := true
