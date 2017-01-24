@@ -70,11 +70,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 
-ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-else
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-endif
+
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_CUSTOM_BOOTIMG_MK := device/fairphone_devices/FP2/mkbootimg.mk
@@ -102,15 +99,6 @@ ADD_RADIO_FILES ?= true
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
-TARGET_USE_KRAIT_PLD_SET := true
-TARGET_KRAIT_BIONIC_PLDOFFS := 10
-TARGET_KRAIT_BIONIC_PLDTHRESH := 10
-TARGET_KRAIT_BIONIC_BBTHRESH := 64
-TARGET_KRAIT_BIONIC_PLDSIZE := 64
-
-TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
-
 TARGET_HW_DISK_ENCRYPTION := false
 
 # Workaround framework bluetooth dependency
@@ -122,8 +110,6 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 #TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
 TARGET_LDPRELOAD := libNimsWrap.so
-
-USE_OPENGL_RENDERER := true
 
 
 TW_THEME := portrait_hdpi

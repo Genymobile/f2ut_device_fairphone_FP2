@@ -1,5 +1,4 @@
 TARGET_USES_QCOM_BSP := true
-TARGET_USES_QCA_NFC := other
 
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
@@ -36,9 +35,9 @@ PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/fairphone_devices/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
-# Display logo image file
-PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ubuntu.wifi.supported=1
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -94,43 +93,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+PRODUCT_PACKAGES += \
+    conn_init
+
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
-
-# NFC packages
-ifeq ($(TARGET_USES_QCA_NFC),true)
-NFC_D := true
-
-ifeq ($(NFC_D), true)
-    PRODUCT_PACKAGES += \
-        libnfcD-nci \
-        libnfcD_nci_jni \
-        nfc_nci.msm8974 \
-        NfcDNci \
-        Tag \
-        com.android.nfc_extras \
-        com.android.nfc.helper
-else
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.msm8974 \
-    NfcNci \
-    Tag \
-    com.android.nfc_extras
-endif
-
-# file that declares the MIFARE NFC constant
-# Commands to migrate prefs from com.android.nfc3 to com.android.nfc
-# NFC access control + feature files + configuration
-PRODUCT_COPY_FILES += \
-        frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-        frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
-# Enable NFC Forum testing by temporarily changing the PRODUCT_BOOT_JARS
-# line has to be in sync with build/target/product/core_base.mk
-endif
 
 PRODUCT_BOOT_JARS += qcmediaplayer \
                      org.codeaurora.Performance \
@@ -144,13 +112,6 @@ PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-
-# Add boot animation
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
-
-# Set default ringtone to Fairphone's
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
 
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/twrp.fstab:recovery/root/etc/twrp.fstab
 
@@ -168,18 +129,6 @@ PRODUCT_COPY_FILES += \
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
 
-# Preferred Applications for Fairphone
-PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/preferred.xml:system/etc/preferred-apps/fp.xml
-
-# remove /dev/diag in user version for CTS
-ifeq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_COPY_FILES += device/qcom/common/rootdir/etc/init.qcom.diag.rc.user:root/init.qcom.diag.rc
-endif
-
-ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
-SKIP_BOOT_JARS_CHECK := true
-endif
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay
 

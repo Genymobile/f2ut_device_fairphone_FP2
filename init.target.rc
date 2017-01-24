@@ -304,3 +304,15 @@ service TCMDServer /system/bin/TCMDServer
     class main
     group root
     user root
+
+service init_wlan /system/bin/sh /system/etc/init_wlan.sh
+    class main
+    user root
+    group root
+    oneshot
+
+service init_bt /system/bin/sh /init_bt.sh
+    class main
+    user root
+    group root
+    oneshot
