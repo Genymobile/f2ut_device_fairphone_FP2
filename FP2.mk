@@ -21,6 +21,8 @@ endif
 
 $(call inherit-product, device/qcom/common/common.mk)
 
+$(call inherit-product, vendor/fairphone/FP2/fp2-vendor.mk)
+
 PRODUCT_NAME := FP2
 PRODUCT_DEVICE := FP2
 PRODUCT_BRAND := Fairphone
